@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Form Tugas 2</title>
+  <style>
+    form{
+        max-width: 400px;
+        width:90%;
+        margin:20px auto;
+        padding:20px;
+        background:rgb(72, 149, 250);
+        border-radius:8px;
+        box-shadow: 0 0 10px rgba(0,0,0,0.2);
+    }
+    body {
+        margin: 0
+        padding: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: #6197f5;
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+     min-height: 100vh;
+    }
+
+    .container {
+      background: rgb(72, 149, 250);
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 0 15px rgba(0,0,0,0.1);
+      width: 100%;
+      max-width: 500px;
+    }
+
+    h2 {
+      text-align: center;
+      color: #2b2b2b;
+    }
+
+    label {
+      display:block;
+      margin-top: 15px;
+      font-weight: bold;
+    }
+
+    input[type="text"],
+    input[type="password"],
+    
+    
+    textarea,
+    select {
+      width: 100%;
+      padding: 10px;
+      margin-top: 5px;
+      border: 1px solid #73a1f8;
+      border-radius: 5px;
+      transition: border-color 0.3s;
+    }
+
+    input:focus,
+    textarea:focus,
+    select:focus {
+      border-color: #007bff;
+      outline: none;
+    }
+
+    input[type="radio"]{
+        margin-right: 5px;
+    },
+    input[type="checkbox"] {
+      margin-right: 5px;
+    }
+    .gender{
+        display:inline-block;
+        margin-right:5px;
+    }
+    .gender input[type="radio"]{
+        margin-right:5px;
+    }
+    .hobi{
+        display:inline-block;
+        margin-right:5px;
+    }
+    .hobi input[type="checkbox"]{
+        margin-right:5px;
+    }
+    .form-group {
+      margin-top: 10px;
+    }
+
+    button {
+      margin-top: 20px;
+      width: 100%;
+      padding: 12px;
+      background-color: #007bff;
+      color: rgb(1, 29, 99);
+      border: none;
+      border-radius: 5px;
+      font-size: 16px;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+
+    button:hover {
+      background-color: #0056b3;
+    }
+
+    fieldset {
+      border: 1px solid #100101;
+      padding: 20px;
+      border-radius: 8px;
+      margin-top: 20px;
+    }
+
+    legend {
+      padding: 0 10px;
+      font-weight: bold;
+      color: #444;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <h2>Formulir Registrasi Mahasiswa</h2>
+    <form action="#" method="post">
+      
+      <fieldset>
+        <legend>Informasi Pribadi</legend>
+
+        <label for="nama">Nama Lengkap:</label>
+        <input type="text" id="nama" name="nama"  required title="Masukkan nama lengkap Anda">
+
+        <label for="email">Email:</label>
+        <input type="text" id="email" name="email" placeholder="contoh:aaaaaaa@gmail.com" required title="Masukkan email yang valid">
+
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" placeholder="Minimal 6 karakter" required title="Buat password yang aman">
+
+        <label for="konfirmasi_password">Konfirmasi Password:</label>
+        <input type="password" id="konfirmasi_password" name="konfirmasi_password"  required title="Masukkan ulang password Anda">
+
+        <label for="NIM">NIM</label>
+        <input type="text" id="NIM" name="NIM"  required title="Masukkan NIM yang valid (9 digit angka)">
+
+        <label for="bio">Tentang Anda:</label>
+        <textarea id="bio" name="bio" rows="4" placeholder="Tuliskan sesuatu tentang diri Anda..."></textarea>
+        
+        <div class="form-group">
+          <label>Jenis Kelamin:</label>
+          
+          <label class="gender">
+            <input type="radio" name="jk" value="Laki-laki" required> Laki-laki
+          </label></br>
+            <label class="gender">
+            <input type="radio" name="jk" value="Perempuan" required> Perempuan
+          </label>
+        </div>
+          
+      </fieldset>
+       
+      <fieldset>
+        <legend>Preferensi</legend>
+        <div class="form-group">
+        <label>Hobi:</label>
+    
+          <label class="hobi">
+            <input type="checkbox" name="hobi" value="Olahraga"> Olahraga</label><br>
+            <label class="hobi">    
+            <input type="checkbox" name="hobi" value="Travelling"> Travelling</label><br>
+            <label class="hobi">    
+            <input type="checkbox" name="hobi" value="Membaca"> Membaca</label><br>
+            <label class="hobi">    
+            <input type="checkbox" name="hobi" value="Memasak"> Memasak</label><br>
+            <label class="hobi">
+            <input type="checkbox" name="hobi" value="Bermain Game"> Bermain Game</label><br>
+            
+          </label>
+        </div>
+      </fieldset>
+      <tr>
+        <td>
+            <input disabled type="text" id="fakultas" name="fakultas"  value="Fakultas Ilmu Komputer dan Teknologi Informasi">
+            <input disabled type="text" id="kampus" name="kampus"  value="Universitas Sumatera Utara">
+        </td>
+      </tr>
+        
+        <label for="jurusan">Pilih Jurusan:</label>
+        <select id="jurusan" name="jurusan" required>
+          <option value="">-- Pilih Jurusan --</option>
+          <option value="TI">Teknologi Informasi</option>
+          <option value="ILKOM">Ilmu Komputer</option>
+        </select>
+    
+         <button type="submit">Kirim</button>
+    </form>
+  </div>
+
+</body>
+</html>
